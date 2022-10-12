@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.suliveevil.app.bundleid</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>7E4EFCA2-7B75-4024-8A7B-3A4DA1369992</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>894C0934-7046-4918-A04C-FBDB5DA80B99</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>894C0934-7046-4918-A04C-FBDB5DA80B99</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8D8F421E-83E4-4481-B50A-6B43A07E60AD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>B55ED144-ACDC-4748-B9D6-3923FE0BF66F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8C6BFCFE-3FFD-41A0-8032-D69E46C18CC0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>894C0934-7046-4918-A04C-FBDB5DA80B99</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>suliveevil</string>
+	<key>description</key>
+	<string>Get App's Bundle Identifier</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>App Bundle ID</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>ab</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>require 'json'
+require 'pathname'
+
+Script_filter_items = Pathname('/Applications').
+  children.
+  concat(Pathname('/Applications/Utilities').children).
+  concat(Pathname('/System/Applications').children).
+  each_with_object([]) { |app, array|
+    path_string = app.to_path
+    next unless path_string.end_with?('.app')
+
+    array.push(
+      uid: path_string,
+      type: 'file',
+      title: app.basename(app.extname).to_path,
+      subtitle: path_string,
+      icon: { path: path_string, type: 'fileicon' },
+      arg: path_string
+    )
+  }
+
+puts({ items: Script_filter_items }.to_json)
+</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>App Bundle ID (All App)</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>7E4EFCA2-7B75-4024-8A7B-3A4DA1369992</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>The App Bundle ID is</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>8D8F421E-83E4-4481-B50A-6B43A07E60AD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>set targetApp to "{query}"
+set bundleID to get id of application targetApp
+return bundleID</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>894C0934-7046-4918-A04C-FBDB5DA80B99</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<true/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>68</integer>
+				<key>keyword</key>
+				<string>abr</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>script</key>
+				<string>ObjC.import('AppKit')
+
+let script_filter_items = ObjC.unwrap($.NSWorkspace.sharedWorkspace.runningApplications) 
+	.filter(app =&gt; app.activationPolicy == $.NSApplicationActivationPolicyRegular)
+	.map(app =&gt; {
+		return {
+			title: ObjC.unwrap(app.localizedName),
+			subtitle: app.bundleURL.fileSystemRepresentation,
+			arg: app.bundleURL.fileSystemRepresentation,
+			icon: { path: app.bundleURL.fileSystemRepresentation, type: 'fileicon' },
+			type: 'file'
+		}
+	})
+
+JSON.stringify({ 'items': script_filter_items })</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>App Bundle ID (Running App)</string>
+				<key>type</key>
+				<integer>7</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>8C6BFCFE-3FFD-41A0-8032-D69E46C18CC0</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B55ED144-ACDC-4748-B9D6-3923FE0BF66F</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>Based on:
+
+[vitorgalvao](https://github.com/vitorgalvao/requested-alfred-workflows)'s two Alfred Workflow: List App and List Running App
+
+
+[JMichaelTX](https://forum.keyboardmaestro.com/t/get-bundle-id/5976)'s AppleScript
+
+
+No External Dependencies
+
+Small
+
+Stable</string>
+	<key>uidata</key>
+	<dict>
+		<key>7E4EFCA2-7B75-4024-8A7B-3A4DA1369992</key>
+		<dict>
+			<key>note</key>
+			<string>Apps on your Mac</string>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>35</real>
+		</dict>
+		<key>894C0934-7046-4918-A04C-FBDB5DA80B99</key>
+		<dict>
+			<key>note</key>
+			<string>get application id</string>
+			<key>xpos</key>
+			<real>290</real>
+			<key>ypos</key>
+			<real>125</real>
+		</dict>
+		<key>8C6BFCFE-3FFD-41A0-8032-D69E46C18CC0</key>
+		<dict>
+			<key>note</key>
+			<string>Apps Running</string>
+			<key>xpos</key>
+			<real>50</real>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>8D8F421E-83E4-4481-B50A-6B43A07E60AD</key>
+		<dict>
+			<key>xpos</key>
+			<real>540</real>
+			<key>ypos</key>
+			<real>35</real>
+		</dict>
+		<key>B55ED144-ACDC-4748-B9D6-3923FE0BF66F</key>
+		<dict>
+			<key>xpos</key>
+			<real>545</real>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.0.0</string>
+	<key>webaddress</key>
+	<string>https://www.github.com/suliveevil</string>
+</dict>
+</plist>
