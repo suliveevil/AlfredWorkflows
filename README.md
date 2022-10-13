@@ -8,12 +8,12 @@
 
 
 
-## write by me
+## Write by me
 
 [App Bundle ID](./workflows/App%20Bundle%20ID.md)
 
 
-## Modified by me
+## Modified from other people
 
 [Search Unicode](./workflows-mod/Search%20Unicode.md)
 
