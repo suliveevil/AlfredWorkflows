@@ -17,6 +17,14 @@
 
 [Search Unicode](./workflows-mod/Search%20Unicode.md)
 
+## Installed
+
+
+[xilopaint/alfred-about-this-mac](https://github.com/xilopaint/alfred-about-this-mac): Shows About This Mac info in Alfred.
+
+[jsumners/alfred-emoji](https://github.com/jsumners/alfred-emoji): Alfred workflow for searching and copying emoji
+
+
 
 
 ## Misc
