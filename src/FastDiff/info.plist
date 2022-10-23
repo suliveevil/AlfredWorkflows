@@ -298,7 +298,7 @@ Well, the vimdiff will be launched in a new Terminal tab page and diff your sele
 	<key>userconfigurationconfig</key>
 	<array/>
 	<key>version</key>
-	<string></string>
+	<string>2.0.0</string>
 	<key>webaddress</key>
 	<string></string>
 </dict>
