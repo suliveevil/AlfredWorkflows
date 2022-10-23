@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.monkeycz.alfred.fastdiff</string>
+	<string>com.suliveevil.fastdiff</string>
 	<key>connections</key>
 	<dict>
 		<key>69FA6CCF-CB39-40AA-A1CD-73D5924F3FAD</key>
@@ -257,7 +257,15 @@ except Exception as e:
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>The default hotkey is " + \". 
+	<string># Alfred-FastDiff
+
+forked from https://github.com/monkeycz/alfred-fastdiff
+
+upgrade to python3 and new FileMerge CLI.
+
+## Usage
+
+The default hotkey is " + \". 
 
 Step 1, Select a file or text segment then press the hotkey.
 Step 2, Select another file or text segment then press the hotkey.
@@ -289,7 +297,9 @@ Well, the vimdiff will be launched in a new Terminal tab page and diff your sele
 	</dict>
 	<key>userconfigurationconfig</key>
 	<array/>
+	<key>version</key>
+	<string></string>
 	<key>webaddress</key>
-	<string>https://github.com/monkeycz/alfred-fastdiff</string>
+	<string></string>
 </dict>
 </plist>
