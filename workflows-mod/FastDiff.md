@@ -7,17 +7,19 @@ original: [monkeycz/alfred-fastdiff](https://github.com/monkeycz/alfred-fastdiff
 
 ## Usage
 
-The default hotkey is " + \".
+The default hotkey is <kbd> + \</kbd>.
 
 Step 1, Select a file or text segment then press the hotkey.
+
 Step 2, Select another file or text segment then press the hotkey.
 
-Well, the vimdiff will be launched in a new Terminal tab page and diff your selected.
+Well, the FileMerge.app / vimdiff (in a new Terminal/iTerm2 tab page) will be launched  and diff your selections.
 
 ## License
 
 GNU GPL v2
 
+## Misc
 
 
 
