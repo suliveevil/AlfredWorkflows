@@ -15,9 +15,11 @@
 
 ## Modified from other people
 
-[Search Unicode](./workflows-mod/Search%20Unicode.md)
+License follows:
 
-[FastDiff](./workflows-mod/FastDiff.md)
+[Search Unicode](./workflows-mod/Search%20Unicode.md) MIT License
+
+[FastDiff](./workflows-mod/FastDiff.md) GNU GPL v2
 
 ## Installed
 
@@ -30,7 +32,6 @@
 
 
 ## Misc
-
 
 Recent Usage:
 
