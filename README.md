@@ -35,6 +35,6 @@ License follows:
 
 Recent Usage:
 
-![recent usage](./attachments/recent-usage.png)
+![recent usage](./assets/recent-usage.png)
 
 
