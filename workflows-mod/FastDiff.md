@@ -15,7 +15,7 @@ Step 2, Select another file or text segment then press the hotkey.
 
 Well, the FileMerge.app / vimdiff (in a new Terminal/iTerm2 tab page) will be launched  and diff your selections.
 
-![FastDiff](./assets/FastDiff.png)
+![FastDiff](../assets/FastDiff.png)
 
 ## License
 
