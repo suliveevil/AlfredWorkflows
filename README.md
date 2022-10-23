@@ -17,6 +17,8 @@
 
 [Search Unicode](./workflows-mod/Search%20Unicode.md)
 
+[FastDiff](./workflows-mod/FastDiff.md)
+
 ## Installed
 
 
