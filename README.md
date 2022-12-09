@@ -12,6 +12,7 @@
 
 [App Bundle ID](./workflows/App%20Bundle%20ID.md)
 
+[Emacs](./workflows/Emacs.md)
 
 ## Modified from other people
 
