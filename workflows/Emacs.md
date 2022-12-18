@@ -10,7 +10,8 @@ All about Emacs
 - Load Doom Emacs config
 - Load Spacemacs config
 - Search keywords on GitHub (Emacs lisp)
-- Search keywords on EmacsWiki
+- Search keywords on EmacsWiki (BaiDu)
+- Search keywords on EmacsChina (Google)
 
 
 
